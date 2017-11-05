@@ -57,7 +57,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "testapp.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -68,7 +68,13 @@
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
+#ifdef __cplusplus
+ extern "C" {
+#endif
 void SystemClock_Config(void);
+#ifdef __cplusplus
+ }
+#endif
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -114,6 +120,8 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
+  TestApp app;
+  cmdc0de::ErrorType et = app.init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -121,7 +129,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+	  app.run();
   /* USER CODE BEGIN 3 */
 
   }

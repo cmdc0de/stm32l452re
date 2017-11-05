@@ -88,8 +88,13 @@
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
-
+#ifdef __cplusplus
+ extern "C" {
+#endif
 void _Error_Handler(char *, int);
+#ifdef __cplusplus
+ }
+#endif
 
 #define Error_Handler() _Error_Handler(__FILE__, __LINE__)
 
